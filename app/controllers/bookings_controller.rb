@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to cars_path, :status :see_other
+    redirect_to cars_path, status: :see_other
   end
 
   def accept

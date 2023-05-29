@@ -7,7 +7,7 @@ class CarsController < ApplicationController
       @cars = Car.where("name LIKE ?", "%#{params[:query]}%")
 
     else
-      @cars= Car.all
+      @cars = Car.all
     end
   end
 
