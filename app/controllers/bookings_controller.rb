@@ -13,12 +13,18 @@ class BookingsController < ApplicationController
     end
   end
 
-  def acept
-    @status
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to cars_path, :status :see_other
+  end
+
+  def accept
+    @status = "your request is accepted"
   end
 
   def decline
-    @status
+    @status = "your request has been declined"
   end
 
   private
