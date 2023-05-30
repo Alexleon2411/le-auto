@@ -1,1 +1,13 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="flexbox">
+        <h1><%= @car.model %></h1>
+          <p>
+            <%= @car.price %>€
+          </p>
+        <button class="btn btn-light"><%= link_to "Edit this ", edit_car_path %></button>
+      </div>
+    </div>
+  </div>
+</div>
