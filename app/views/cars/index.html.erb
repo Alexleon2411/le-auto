@@ -7,22 +7,23 @@
   <div class="row">
     <div class="col-8">
       <div class="col-8">
-        <h2> here go the car content </h2>
-          <%= link_to "create a new card", new_car_path %>
-            <div class="card" style="width: 18rem;">
-              <ul>
-                  <% @cars.each do |car| %>
-                  <li>
-                  <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLA/7269/1621948227508/front-left-side-47.jpg?impolicy=resize&imwidth=480" class="card-img-top" alt="cars" />
-                    <div class="card-body">
-                    <%= car.model %>
-                    <%= car.price%>$
-                    <%= car.city %>
-                    <%= car.year %>
-                    <% end %>
-                  </li>
-              </ul>
-            </div>
+      <h2> here go the car content </h2>
+      <%= link_to "create a new card", new_car_path %>
+      <form>
+        <% @cars.each do |car| %>
+          <div class="card">
+          <%= car.model %>
+          <%= car.price%>$
+          <%= car.city %>
+          <%= car.year %>
+          <% if car.photos.attached? %>
+            <% car.photos.each do |photo|%>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <% end %>
+        <% end %>
+          </div>
+      </form>
       </div>
     </div>
     <div class="col-4">
