@@ -14,7 +14,9 @@ User.destroy_all
 user1 = User.new(
   email: "alpha@gmail.com",
   password: "123456",
-  password_confirmation: "123456"
+  password_confirmation: "123456",
+  first_name: "cass",
+  last_name: "cal"
 )
 user1.save!
 
