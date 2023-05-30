@@ -5,7 +5,10 @@
     <div class="col-8">
       <div class="flexbox">
         <h1><%= @car.model %></h1>
-        <button class="btn btn-light"><%= link_to "Edit this task", carss_edit_path %></button>
+          <p>
+            <%= @car.price %>€
+          </p>
+        <button class="btn btn-light"><%= link_to "Edit this ", edit_car_path %></button>
       </div>
     </div>
   </div>
