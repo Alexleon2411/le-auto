@@ -1,4 +1,27 @@
-<div class="navbar">
+<div class="navbar bg-primary bg-gradient" style="height: 300px;">
 <h2> Here are your car list </h2>
 </div>
 
+<div class="container">
+
+  <div class="row">
+    <div class="col-8">
+      <div class="col-8">
+      <h2> here go the car content </h2>
+      <%= link_to "create a new card", new_car_path %>
+      <form>
+        <% @cars.each do |car| %>
+          <%= car.model %>
+          <%= car.price%>$
+          <%= car.city %>
+          <%= car.year %>
+          <% end %>
+      </form>
+      </div>
+    </div>
+    <div class="col-4">
+    <h2> here go the form </h2>
+    </div>
+  </div>
+
+</div>
