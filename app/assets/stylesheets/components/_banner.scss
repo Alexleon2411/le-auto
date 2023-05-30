@@ -1,0 +1,22 @@
+.banner {
+  background: linear-gradient(#414CBF, #D34D1C);
+  background-size: cover;
+  background-position: center;
+  background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685304627/production/mld992r2cul67bil4jow7fdiidp6.jpg');
+  height: 500px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
