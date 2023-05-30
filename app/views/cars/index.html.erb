@@ -11,11 +11,18 @@
       <%= link_to "create a new card", new_car_path %>
       <form>
         <% @cars.each do |car| %>
+          <div class="card">
           <%= car.model %>
           <%= car.price%>$
           <%= car.city %>
           <%= car.year %>
+          <% if car.photos.attached? %>
+            <% car.photos.each do |photo|%>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
           <% end %>
+        <% end %>
+          </div>
       </form>
       </div>
     </div>
