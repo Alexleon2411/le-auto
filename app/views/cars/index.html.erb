@@ -1,3 +1,4 @@
+
 <%= render "shared/navbar" %>
 <div class="banner text-align-center" style="height: 300px;">
 
@@ -5,29 +6,25 @@
   <h1 class=""> Welcome to Le-Auto</h2>
   </div>
 </div>
-<div class="container  card w-100">
+<div class="container mb-2 " style="width: 500px;">
+<div></div>
       <form class="d-flex ">
-        <input class="form-control grap w-75" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-        <button class="btn btn-outline-dark p-1" type="submit">Search</button>
+        <input class="form-control grap w-75 bg-dark text-white card-border" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
+        <button class="btn btn-outline-dark p-1 card-border" type="submit">Search</button>
       </form>
-    </div>
-
-<div class="container card">
-  <h2> Here go the car content </h2>
-  <%= link_to "Create a new car", new_car_path, class: " btn text-decoration-none" %>
 </div>
 
+<div class="container mt-2 bg-light card-border">
   <div class="row">
-    <h2> here go the car content </h2>
-    <%= link_to "Add a new car", new_car_path %>
-    <div class = "d-flex flex-wrap justify-content-around">
+    <div class = "d-flex flex-wrap justify-content-between card-border">
       <% @cars.each do |car| %>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-              <% if car.photos.attached? %>
-              <% car.photos.each do |photo|%>
-                <%= cl_image_tag photo.key, height: 255, width: 200, crop: :fit %>
-              <% end %>
+        <div class="card m-2" style="width: 300px;">
+          <div class=" card card-border">
+            <% if car.photos.attached? %>
+              <img src=<%= cl_image_tag photo.key %> >
+             <% else %>
+            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
+
             <% end %>
             <%# <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car"> %>
             <h5 class="card-title"><%= car.model %></h5>
@@ -43,20 +40,6 @@
         </div>
       <% end %>
     </div>
-  </div>
-        <div class="col-4">
-          <h2> here go the form </h2>
-        </div>
+  </div
     </div>
 </div>
-
-
-
-<%#
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div> %>
