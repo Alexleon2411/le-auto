@@ -1,4 +1,4 @@
-<div class="navbar bg-primary bg-gradient" style="height: 300px;">
+<div class="navbar banner" style="height: 300px;">
 <h2> Here are your car list </h2>
 </div>
 
@@ -23,6 +23,7 @@
                 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
             <% end %>
+            <%= link_to "More info", car_path(car) %>
 
           </div>
         </div>

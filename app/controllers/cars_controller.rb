@@ -38,7 +38,7 @@ class CarsController < ApplicationController
     if @car.update(car_params)
       redirect_to car_path(@car)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
