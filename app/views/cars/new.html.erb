@@ -1,20 +1,17 @@
-<div class="container mt-2">
-  <div class="card bg-light p-2">
+<div class="" style="height: 100vh;">
+ <%= render "shared/navbar" %>
+  <div class="container card p-2 banner" style="height: auto;">
    <div class="row">
-   <div class="col-8">
+   <div class="col-8 ">
     <h1>Please introduce the details of  your car</h1>
-      <form>
           <%= simple_form_for (@car) do |f| %>
-            <div>
             <%= f.input :model %>
             <%= f.input :price %>
             <%= f.input :year %>
             <%= f.input :city %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <button class="btn btn-outline-dark p-0"> <%= f.submit %></button>
-            <% end %>
-          </div>
-      </form>
+            <%= f.button :submit, class: "btn btn-outline-dark p-0" %>
+          <% end %>
 
       </div>
       <div class="col-4">
