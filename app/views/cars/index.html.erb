@@ -4,12 +4,21 @@
   <h1 class=""> Welcome to Le-Auto</h2>
   </div>
 </div>
+<div class="container  card w-100">
+      <form class="d-flex ">
+        <input class="form-control grap w-75" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
+        <button class="btn btn-outline-dark p-1" type="submit">Search</button>
+      </form>
+    </div>
 
-<div class="container card mt-2">
+<div class="container card"
+  <h2> Here go the car content </h2>
+  <%= link_to "Create a new car", new_car_path, class: " btn text-decoration-none" %>
+</div>
 
+
+<div class="container card mt-2 bg-light">
   <div class="row ">
-    <h2> Here go the car content </h2>
-    <%= link_to "Create a new car", new_car_path, class: "btn btn-primary text-decoration-none" %>
     <div class = "d-flex flex-wrap justify-content-between ">
       <% @cars.each do |car| %>
         <div class="card m-2" style="width: 300px;">
