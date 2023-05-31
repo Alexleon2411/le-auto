@@ -1,12 +1,12 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy, :update, :edit]
-
+  
   def index
     @cars = Car.all
 
     if params[:query].present?
       @query = params[:query]
-      @cars = Car.where("name LIKE ?", "%#{params[:query]}%")
+      @cars = Car.where("model LIKE ?", "%#{params[:query]}%")
     else
       @cars = Car.all
     end
