@@ -1,34 +1,62 @@
-<div class="navbar banner" style="height: 300px;">
-<h2> Here are your car list </h2>
+<div class="banner text-align-center" style="height: 300px;">
+  <%= render "shared/navbar" %>
+  <div class="d-flex justify-content-center align-items-end"">
+  <h1 class=""> Welcome to Le-Auto</h2>
+  </div>
+</div>
+<div class="container  card w-100">
+      <form class="d-flex ">
+        <input class="form-control grap w-75" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
+        <button class="btn btn-outline-dark p-1" type="submit">Search</button>
+      </form>
+    </div>
+
+<div class="container card"
+  <h2> Here go the car content </h2>
+  <%= link_to "Create a new car", new_car_path, class: " btn text-decoration-none" %>
 </div>
 
-<div class="container">
 
-  <div class="row">
-    <div class="col-8">
-      <div class="col-8">
-      <h2> here go the car content </h2>
-      <%= link_to "create a new card", new_car_path %>
-      <form>
-        <% @cars.each do |car| %>
-          <div class="card">
-          <%= car.model %>
-          <%= car.price%>$
-          <%= car.city %>
-          <%= car.year %>
-          <% if car.photos.attached? %>
-            <% car.photos.each do |photo|%>
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container card mt-2 bg-light">
+  <div class="row ">
+    <div class = "d-flex flex-wrap justify-content-between ">
+      <% @cars.each do |car| %>
+        <div class="card m-2" style="width: 300px;">
+          <div class="card-body">
+            <% if car.photos.attached? %>
+              <img src=<%= cl_image_tag photo.key %> >
+             <% else %>
+            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
+            <% end %>
+            <h5 class="card-title"><%= car.model %></h5>
+            <p class="card-text">
+              <%= car.price%>$-
+              <%= car.city %>-
+              <%= car.year %>
+            </p>
+            <% if car.photos.attached? %>
+              <% car.photos.each do |photo|%>
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
             <% end %>
-        <% end %>
           </div>
-      </form>
-      </div>
-    </div>
-    <div class="col-4">
-    <h2> here go the form </h2>
+        </div>
+      <% end %>
     </div>
   </div>
-
+        <div class="col-4">
+          <h2> here go the form </h2>
+        </div>
+    </div>
 </div>
+
+
+
+<%#
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div> %>
