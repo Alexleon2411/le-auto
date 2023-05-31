@@ -3,16 +3,18 @@
     <h1>Car info</h1>
     <div class="row">
       <div class="col-8 .col-sm-3">
-        <div class="colcol-8 col-sm-3">
-          <%= @car.model %>
+        <div class="colcol-7">
+          <strong><%= @car.model %></strong>
           <%= @car.price %>
           <%= @car.city %>
           <%= @car.year %>
         </div>
+
+        <div>
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+        </div>
       </div>
     </div>
-
-
     <div id="car" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -25,29 +27,26 @@
         <img class="d-block w-50" src="..." alt="Third slide">
       </div>
     </div>
-
-
-
-  </div class="booking_form p-8">
-    </div>
-      <div class="row col-sm-6 col-md-6">
-        <%= simple_form_for [@car, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-        <% end %>
+    </div class="booking_form p-8">
       </div>
+        <div class="row col-sm-6 col-md-6">
+          <%= simple_form_for [@car, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+        </div>
       <div class="">
         <h3>Contact Us</h3>
-        <div class="container-form p-8">
-            <form name="contact_form">
-              <input type="text" name="name" placeholder="Your name" title="Your Name" required><br>
-              <input type="email" name="email" placeholder="Your Email Address" title="Your Email Address" required><br>
-              <input type="tel" name="whatsapp-number" placeholder="Your Number" title="Your Number" maxlength="10" required><br>
-              <textarea name="message" placeholder="Your Message" title="Your Message" style="max-width: 250px; max-height: 200px; height: 100px; min-width: 250px;" required></textarea><br><br>
-              <input type="submit" id="btn-submit" name="submit" value="Send Message"><br>
-              <input type="reset" id="btn-reset" name="reset" value="Clear All">
-            </form>
+        <div class="container-form">
+          <form name="contact_form">
+            <input type="text" name="name" placeholder="Your name" title="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email Address" title="Your Email Address" required><br>
+            <input type="tel" name="number" placeholder="Your Number" title="Your Number" maxlength="10" required><br>
+            <textarea name="message" placeholder="Your Message" title="Your Message" style="max-width: 250px; max-height: 200px; height: 100px; min-width: 250px;" required></textarea><br><br>
+            <input type="submit" id="btn-submit" name="submit" value="Send Message"><br>
+            <input type="reset" id="btn-reset" name="reset" value="Clear All">
+          </form>
         </div>
         </div>
     </div>
