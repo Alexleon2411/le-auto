@@ -1,14 +1,8 @@
 
 <%= render "shared/navbar" %>
 <div class="banner text-align-center" style="height: 300px;">
-<<<<<<< HEAD
   <div class="d-flex justify-content-center align-items-end"">
   <h1 class="text-light"> Welcome to Le-Auto</h2>
-=======
-
-  <div class="d-flex justify-content-center align-items-end">
-  <h1 class=""> Welcome to Le-Auto</h2>
->>>>>>> 08d2c70931c8fe16047884fcf2bcabe009ea8034
   </div>
 </div>
 <div class="container mb-2 mt-2" style="width: 500px;">
@@ -19,7 +13,6 @@
       </form>
 </div>
 
-<<<<<<< HEAD
 <div class="container mt-2 bg">
   <div class = "d-flex flex-wrap justify-content-between ">
       <% @cars.each do |car| %>
@@ -53,34 +46,4 @@
           </div>
       <% end %>
   </div>
-=======
-<div class="container mt-2 bg-light card-border">
-  <div class="row">
-    <div class = "d-flex flex-wrap justify-content-between card-border">
-      <% @cars.each do |car| %>
-        <div class="card m-2" style="width: 300px;">
-          <div class=" card card-border">
-            <% if car.photos.attached? %>
-              <img src=<%= cl_image_tag photo.key %> >
-             <% else %>
-            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
-
-            <% end %>
-            <%# <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car"> %>
-            <h5 class="card-title"><%= car.model %></h5>
-            <p class="card-text">
-              <%= car.price%>$
-              <%= car.city %>
-              <%= car.year %>
-            </p>
-
-            <%= link_to "Book Your Car", car_path(car) %>
-            <%= link_to "Edit car Info", edit_car_path(car) %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div
-    </div>
->>>>>>> 08d2c70931c8fe16047884fcf2bcabe009ea8034
 </div>
