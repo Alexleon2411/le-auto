@@ -1,15 +1,21 @@
 .banner {
+
+  background: linear-gradient(#414CBF, #D34D1C);
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685553893/le-auto/banner_Programa-para-empresas_mf8m8z.jpg');
+  height: 500px;
+
 }
 
 .banner h1 {
-  margin: 0;
+  margin: 1;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   font-size: 32px;
   font-weight: bold;
+  font-family: 'Cinzel', serif;
+  padding: 2px;
 }
 
 .banner p {
