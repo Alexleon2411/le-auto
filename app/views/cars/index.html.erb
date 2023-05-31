@@ -11,20 +11,21 @@
       <% @cars.each do |car| %>
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
+              <% if car.photos.attached? %>
+              <% car.photos.each do |photo|%>
+                <%= cl_image_tag photo.key, height: 255, width: 200, crop: :fit %>
+              <% end %>
+            <% end %>
+            <%# <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car"> %>
             <h5 class="card-title"><%= car.model %></h5>
             <p class="card-text">
               <%= car.price%>$
               <%= car.city %>
               <%= car.year %>
             </p>
-            <% if car.photos.attached? %>
-              <% car.photos.each do |photo|%>
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-              <% end %>
-            <% end %>
-            <%= link_to "More info", car_path(car) %>
 
+            <%= link_to "Book Your Car", car_path(car) %>
+            <%= link_to "Edit car Info", edit_car_path(car) %>
           </div>
         </div>
       <% end %>
