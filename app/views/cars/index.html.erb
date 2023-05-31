@@ -1,6 +1,7 @@
+<%= render "shared/navbar" %>
 <div class="banner text-align-center" style="height: 300px;">
-  <%= render "shared/navbar" %>
-  <div class="d-flex justify-content-center align-items-end"">
+
+  <div class="d-flex justify-content-center align-items-end">
   <h1 class=""> Welcome to Le-Auto</h2>
   </div>
 </div>
@@ -11,7 +12,7 @@
       </form>
     </div>
 
-<div class="container card"
+<div class="container card">
   <h2> Here go the car content </h2>
   <%= link_to "Create a new car", new_car_path, class: " btn text-decoration-none" %>
 </div>
