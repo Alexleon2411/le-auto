@@ -1,26 +1,51 @@
 <div class="" style="height: 100vh;">
  <%= render "shared/navbar" %>
-  <div class="container card p-2 banner" style="height: auto;">
-   <div class="row">
+ <div class="banner">
+ </div>
+  <div class="container p-2 card-border " style="height: auto; background-image: url('https://t3.ftcdn.net/jpg/02/90/72/26/360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg'); background-repeat: no-repeat; background-size: cover; color: #6CF0DE;">
+  <div class="row">
    <div class="col-8 ">
-    <h1>Please introduce the details of  your car</h1>
-      <form class="text-white">
-          <%= simple_form_for (@car) do |f| %>
-            <div>
-            <%= f.input :model %>
-            <%= f.input :price %>
-            <%= f.input :year %>
-            <%= f.input :city %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <button class="btn btn-outline-dark p-0"> <%= f.submit %></button>
-            <% end %>
-          </div>
-      </form>
-
+      <h1>Please introduce the details of  your car</h1>
+        <form class="text-white">
+            <%= simple_form_for (@car) do |f| %>
+              <div>
+              <%= f.input :model %>
+              <%= f.input :price %>
+              <%= f.input :year %>
+              <%= f.input :city %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+              <button class="btn btn-outline-dark p-0"> <%= f.submit %></button>
+              <% end %>
+            </div>
+        </form>
       </div>
-      <div class="col-4">
-        <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685452801/development/young-woman-with-microphone-working-on-record-studio-scaled-e1632251040963_zlbwr2.jpg', crop: :fill, class: "image-size")  %>
+    <div class="col-4">
+        <div class="col-2">
+          <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685452801/development/young-woman-with-microphone-working-on-record-studio-scaled-e1632251040963_zlbwr2.jpg', class: "image-size")  %>
+        </div>
         <h3 class="fs-5 text-white">if you have ay cuestion please <%= link_to "contact us", cars_path, class: "text-decoration-none"%> </h3>
+      </div>
+    </div>
+  </div>
+<div style="heigh: 200px; background-color: transparent;">
+</div>
+
+  <div class="row">
+
+    <div class="col-6 border flex-fill mt-5 border border-dark" style="width: 50vh; height: 50vh; background-color: #99A98F;">
+      <div class="d-flex text-align-center justify-content-center me-5 p-3">
+        <h2 class="text-white "> Security policy and objective</h2>
+      </div>
+      <div class="d-flex text-align-center justify-content-center me-5 container">
+        <p class="text-white fs-4"> Cultural Aware Content
+        Mix and match vehicles, people, surroundings and company branding.
+        Every vehicle you offer in spectacular surroundings and people of ethnicity
+        relevant to your audience, branded as you see fit. Make your advertising even more effective
+         than before without spending a fortune on expensive photo shoots.
+         </p>
+      </div>
+      <div class="d-flex text-align-center justify-content-center me-5 container">
+        <%= link_to "Book your car", cars_path, class: "text-decoration-none btn btn-dark card-border " %>
       </div>
     </div>
   </div>

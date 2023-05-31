@@ -3,43 +3,48 @@
 </div>
 <div class="banner text-align-center" style="height: 300px;">
   <div class="d-flex justify-content-center align-items-end"">
-  <h1 class="text-dark"> Welcome to Le-Auto</h2>
+  <h1 class="text-light"> Welcome to Le-Auto</h2>
   </div>
 </div>
-<div class="container mb-2 " style="width: 500px;">
+<div class="container mb-2 mt-2" style="width: 500px;">
 <div></div>
       <form class="d-flex ">
         <input class="form-control grap w-75 bg-dark text-white card-border" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-        <button class="btn btn-outline-dark p-1 card-border" type="submit">Search</button>
+        <button class="btn2 btn btn-outline-dark p-1 card-border" type="submit" style="background-image: url('https://png.pngtree.com/background/20230412/original/pngtree-car-light-effect-light-blue-picture-image_2397923.jpg'); background-size: cover;">Search</button>
       </form>
 </div>
 
-<div class="container mt-2 bg-light card-border">
-  <div class="row">
-    <div class = "d-flex flex-wrap justify-content-between card-border">
+<div class="container mt-2 bg">
+  <div class = "d-flex flex-wrap justify-content-between ">
       <% @cars.each do |car| %>
-        <div class="card m-2" style="width: 300px;">
-          <div class=" card card-border">
-            <% if car.photos.attached? %>
-              <img src=<%= cl_image_tag photo.key %> >
-             <% else %>
-            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
-            <% end %>
-            <h5 class="card-title"><%= car.model %></h5>
-            <p class="card-text">
-              <%= car.price%>$-
-              <%= car.city %>-
-              <%= car.year %>
-            </p>
-            <% if car.photos.attached? %>
-              <% car.photos.each do |photo|%>
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="m-2 " style="width: 300px;">
+            <div class="card-trip">
+              <% if car.photos.attached? %>
+                <img src=<%= cl_image_tag photo.key %> >
+              <% else %>
+                <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top " alt="car" >
               <% end %>
-            <% end %>
+              <div class="card-trip-infos">
+              <div>
+              <h2 class="card-title"><%= car.model %></h2>
+              <p class="card-text">Address: <%= car.city %><br>Year: <%= car.year %>
+              </p>
+              </div>
+              <h2 class="card-trip-pricing"><%= car.price%>$</h2>
+              <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+              </div>
+              <% if car.photos.attached? %>
+                <% car.photos.each do |photo|%>
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+              <% end %>
+              <%= link_to "More",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
+              <%= link_to "Delete",
+              car_path(car),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
+              %>
+            </div>
           </div>
-        </div>
       <% end %>
-    </div>
-  </div
-    </div>
+  </div>
 </div>
