@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy, :update, :edit]
-
+  
   def index
     @cars = Car.all
 
