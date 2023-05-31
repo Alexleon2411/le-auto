@@ -36,7 +36,20 @@
         <%= f.input :end_date %>
         <%= f.button :submit, class: 'btn btn-primary' %>
         <% end %>
-    </div>
+        </div>
+      <div class="">
+        <h3>Contact Us</h3>
+        <div class="container-form">
+          <form name="contact_form">
+            <input type="text" name="name" placeholder="Your name" title="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email Address" title="Your Email Address" required><br>
+            <input type="tel" name="number" placeholder="Your Number" title="Your Number" maxlength="10" required><br>
+            <textarea name="message" placeholder="Your Message" title="Your Message" style="max-width: 250px; max-height: 200px; height: 100px; min-width: 250px;" required></textarea><br><br>
+            <input type="submit" id="btn-submit" name="submit" value="Send Message"><br>
+            <input type="reset" id="btn-reset" name="reset" value="Clear All">
+          </form>
+        </div>
+        </div>
     </div>
 
   </div>
