@@ -21,6 +21,7 @@ class CarsController < ApplicationController
   end
 
   def create
+    raise
     @car = Car.new(car_params)
     @user = current_user
     @car.user = @user

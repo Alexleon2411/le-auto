@@ -23,7 +23,11 @@
       <% @cars.each do |car| %>
         <div class="card m-2" style="width: 300px;">
           <div class="card-body">
+            <% if car.photos.attached? %>
+              <img src=<%= cl_image_tag photo.key %> >
+             <% else %>
             <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
+            <% end %>
             <h5 class="card-title"><%= car.model %></h5>
             <p class="card-text">
               <%= car.price%>$-
