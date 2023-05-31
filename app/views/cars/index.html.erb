@@ -16,29 +16,28 @@
   <%= link_to "Create a new car", new_car_path, class: " btn text-decoration-none" %>
 </div>
 
-
-<div class="container card mt-2 bg-light">
-  <div class="row ">
-    <div class = "d-flex flex-wrap justify-content-between ">
+  <div class="row">
+    <h2> here go the car content </h2>
+    <%= link_to "create a new card", new_car_path %>
+    <div class = "d-flex flex-wrap justify-content-around">
       <% @cars.each do |car| %>
-        <div class="card m-2" style="width: 300px;">
+        <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <% if car.photos.attached? %>
-              <img src=<%= cl_image_tag photo.key %> >
-             <% else %>
-            <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
-            <% end %>
-            <h5 class="card-title"><%= car.model %></h5>
-            <p class="card-text">
-              <%= car.price%>$-
-              <%= car.city %>-
-              <%= car.year %>
-            </p>
-            <% if car.photos.attached? %>
+              <% if car.photos.attached? %>
               <% car.photos.each do |photo|%>
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag photo.key, height: 255, width: 200, crop: :fit %>
               <% end %>
             <% end %>
+            <%# <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car"> %>
+            <h5 class="card-title"><%= car.model %></h5>
+            <p class="card-text">
+              <%= car.price%>$
+              <%= car.city %>
+              <%= car.year %>
+            </p>
+
+            <%= link_to "Book Your Car", car_path(car) %>
+            <%= link_to "Edit car Info", edit_car_path(car) %>
           </div>
         </div>
       <% end %>
