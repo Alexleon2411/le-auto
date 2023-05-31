@@ -13,6 +13,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -20,6 +21,7 @@ class CarsController < ApplicationController
   end
 
   def create
+    raise
     @car = Car.new(car_params)
     @user = current_user
     @car.user = @user

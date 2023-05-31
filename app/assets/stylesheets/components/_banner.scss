@@ -1,7 +1,11 @@
 .banner {
+
+  background: linear-gradient(#414CBF, #D34D1C);
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685304627/production/mld992r2cul67bil4jow7fdiidp6.jpg');
+  height: 500px;
+
 }
 
 .banner h1 {
