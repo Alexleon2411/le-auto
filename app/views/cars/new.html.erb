@@ -4,23 +4,19 @@
    <div class="row">
    <div class="col-8 ">
     <h1>Please introduce the details of  your car</h1>
-      <form class="text-white">
           <%= simple_form_for (@car) do |f| %>
-            <div>
             <%= f.input :model %>
             <%= f.input :price %>
             <%= f.input :year %>
             <%= f.input :city %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <button class="btn btn-outline-dark p-0"> <%= f.submit %></button>
-            <% end %>
-          </div>
-      </form>
+            <%= f.button :submit, class: "btn btn-outline-dark p-0" %>
+          <% end %>
 
       </div>
       <div class="col-4">
         <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685452801/development/young-woman-with-microphone-working-on-record-studio-scaled-e1632251040963_zlbwr2.jpg', crop: :fill, class: "image-size")  %>
-        <h3 class="fs-5 text-white">if you have ay cuestion please <%= link_to "contact us", cars_path, class: "text-decoration-none"%> </h3>
+        <h3 class="fs-5 ">if you have a question please <%= link_to "contact us", cars_path, class: "text-decoration-none"%> </h3>
       </div>
     </div>
   </div>

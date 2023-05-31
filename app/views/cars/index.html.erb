@@ -1,9 +1,9 @@
-<div class="">
-  <%= render "shared/navbar" %>
-</div>
+
+<%= render "shared/navbar" %>
 <div class="banner text-align-center" style="height: 300px;">
-  <div class="d-flex justify-content-center align-items-end"">
-  <h1 class="text-dark"> Welcome to Le-Auto</h2>
+
+  <div class="d-flex justify-content-center align-items-end">
+  <h1 class=""> Welcome to Le-Auto</h2>
   </div>
 </div>
 <div class="container mb-2 " style="width: 500px;">
@@ -24,18 +24,18 @@
               <img src=<%= cl_image_tag photo.key %> >
              <% else %>
             <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car">
+
             <% end %>
+            <%# <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car"> %>
             <h5 class="card-title"><%= car.model %></h5>
             <p class="card-text">
-              <%= car.price%>$-
-              <%= car.city %>-
+              <%= car.price%>$
+              <%= car.city %>
               <%= car.year %>
             </p>
-            <% if car.photos.attached? %>
-              <% car.photos.each do |photo|%>
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-              <% end %>
-            <% end %>
+
+            <%= link_to "Book Your Car", car_path(car) %>
+            <%= link_to "Edit car Info", edit_car_path(car) %>
           </div>
         </div>
       <% end %>
