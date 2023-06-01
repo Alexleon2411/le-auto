@@ -28,7 +28,7 @@ user2 = User.new(
 user2.save!
 
 puts 'intiallizing seeding.....'
-10.times do
+12.times do
   new_cars = Car.new(model: Faker::Vehicle.make, price: Faker::Commerce.price(range: 1000..10_000, as_string: true), city: Faker::Address.city, year: Faker::Vehicle.year)
   new_cars.user = [user1, user2].sample
   new_cars.save!
