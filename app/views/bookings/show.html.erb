@@ -1,0 +1,10 @@
+<h1>Your details of your request</h1>
+<%= @booking.user.first_name %>
+<%= @booking.user.last_name %>
+<% if @booking.car.photos.attached? %>
+  <% @booking.car.photos.each do |photo|%>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top " %>
+  <% end %>
+<% else %>
+  <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top " alt="car" >
+<% end %>
