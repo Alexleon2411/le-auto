@@ -7,6 +7,8 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "destroying all bookings"
+Booking.destroy_all
 puts "destroying all the cars"
 Car.destroy_all
 puts "destroying all the users"
@@ -21,18 +23,18 @@ user1 = User.new(
   first_name: "cass",
   last_name: "cal"
 )
+user1.photo.attach(io: URI.open("https://source.unsplash.com/random/?user"), filename: "nes.jpg", content_type: "image/jpg")
 user1.save!
 
-user1.photo.attach(io: URI.open("https://source.unsplash.com/random/?user"), filename: "nes.jpg", content_type: "image/jpg")
 
 user2 = User.new(
   email: "beta@gmail.com",
   password: "123456",
   password_confirmation: "123456"
 )
+user2.photo.attach(io: URI.open("https://source.unsplash.com/random/?user"), filename: "nes.jpg", content_type: "image/jpg")
 user2.save!
 
-user2.photo.attach(io: URI.open("https://source.unsplash.com/random/?user"), filename: "nes.jpg", content_type: "image/jpg")
 
 puts 'intiallizing seeding.....'
 12.times do
