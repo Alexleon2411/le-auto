@@ -6,7 +6,7 @@ class CarsController < ApplicationController
 
     if params[:query].present?
       @query = params[:query]
-      @cars = Car.where("model LIKE ?", "%#{params[:query]}%")
+      @cars = Car.where("model ILIKE ?", "%#{params[:query]}%")
     else
       @cars = Car.all
     end
@@ -21,7 +21,6 @@ class CarsController < ApplicationController
   end
 
   def create
-    raise
     @car = Car.new(car_params)
     @user = current_user
     @car.user = @user
