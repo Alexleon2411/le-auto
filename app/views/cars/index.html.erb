@@ -40,7 +40,7 @@
               <h2 class="card-trip-pricing"><%= car.price%>$</h2>
               <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
               </div>
-              <%= link_to "More",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
+              <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
               <%= link_to "Delete",
               car_path(car),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
