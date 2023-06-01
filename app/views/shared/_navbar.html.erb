@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-lewagon bg ">
   <div class="container-fluid">
     <%= link_to cars_path, class: "navbar-brand" do %>
-      <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685448973/development/nux226fqc572wj2mnle8ku0zep6a.webp') %>
+      <%= image_tag('https://png.pngtree.com/background/20230412/original/pngtree-car-light-effect-light-blue-picture-image_2397923.jpg' , class: "card-border btn2" )%>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,13 +13,13 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active d-flex align-items-center ">
-            <%= link_to "Home", cars_path, class: "nav-link text-dark" %>
+            <%= link_to "Home", root_path, class: "nav-link text-dark font border border-dark m-2 card-border" %>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Messages", "#", class: "nav-link text-dark" %>
+            <%= link_to "Messages", "#", class: "nav-link text-dark font border border-dark m-2 card-border" %>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Creat a car", new_car_path, class: "nav-link text-dark" %>
+            <%= link_to "Creat a car", new_car_path, class: "nav-link text-dark font border border-dark m-2 card-border" %>
           </li>
           <li class="nav-item dropdown bg">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,7 +29,7 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           <% end %>
           </a>
-            <div class="dropdown-menu dropdown-menu-end bg" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end bg-dark card-border" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item text-success" %>
               <%= link_to "Another action", "#", class: "dropdown-item text-success" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-success" %>
