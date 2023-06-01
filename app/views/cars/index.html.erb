@@ -39,7 +39,7 @@
                   </p>
                 </div>
                 <h2 class="card-trip-pricing"><%= car.price%>$</h2>
-                <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+                <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered" %>
               </div>
               <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark ms-2 p-1 card-border"%>
               <%= link_to "Delete",
