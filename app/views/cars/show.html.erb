@@ -16,7 +16,7 @@
       </ul>
       </div>
     </div>
-
+    
     <div id="car" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -30,11 +30,12 @@
     </div> %>
   </div>
 </div>
-    </div>
+
+  </div>
     <div class="col-7">
-      <%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f| %>
-        <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+      <%= simple_form_for [@car, @booking], data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
         <%= f.submit 'Schedule your appointment' %>
       <% end %>
 
