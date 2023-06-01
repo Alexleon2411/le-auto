@@ -5,7 +5,7 @@
       <div class="colcol-8 col-sm-3">
       <% if @car.photos.attached? %>
         <% @car.photos.each do |photo|%>
-          <%= cl_image_tag photo.key, height: 800, width: 500, crop: :fit %>
+          <%= cl_image_tag photo.key, height: 700, width: 400, crop: :fit %>
         <% end %>
       <% end %>
       <ul>
@@ -16,6 +16,7 @@
       </ul>
       </div>
     </div>
+
     <div id="car" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -54,7 +55,9 @@
         </div>
         </div>
     </div>
-
+    <div class="container">
+      <%= link_to "Back", :back %>
+    </div>
   </div>
 </div>
 <div >
