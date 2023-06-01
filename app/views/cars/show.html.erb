@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="height: 100vh;">
   <h1>Book Your Car</h1>
   <div class="row">
     <div class="col-8 .col-sm-3">
@@ -16,7 +16,7 @@
       </ul>
       </div>
     </div>
-    <%# <div id="car" class="carousel slide" data-ride="carousel">
+    <div id="car" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img class="d-block w-50" src="..." alt="First slide">
@@ -31,13 +31,16 @@
 </div>
     </div>
     <div class="col-7">
-      <%= simple_form_for [@car, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-        <% end %>
+      <%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+        <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+        <%= f.submit 'Schedule your appointment' %>
+      <% end %>
+
         </div>
+
       <div class="">
+
         <h3>Contact Us</h3>
         <div class="container-form">
           <form name="contact_form">
@@ -54,3 +57,15 @@
 
   </div>
 </div>
+<div >
+
+ <p> you create the following book</p>
+
+ <p>
+  <%= @booking.status %>
+  <%= @booking.start_date %>
+  <%= @booking.end_date %>
+  <%= @booking.car %>
+</p>
+
+</div
