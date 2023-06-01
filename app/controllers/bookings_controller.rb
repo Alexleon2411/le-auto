@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
 
     if @booking.save
-      redirect_to  new_car_booking_path(@booking.car)
+      redirect_to  dashboard_path(@booking.car)
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to cars_path, status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   def accept
