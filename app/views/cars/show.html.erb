@@ -1,71 +1,41 @@
+<%= render "shared/navbar" %>
 <div class="container" style="height: 100vh;">
-  <h1>Book Your Car</h1>
   <div class="row">
-    <div class="col-8 .col-sm-3">
-      <div class="colcol-8 col-sm-3">
-      <% if @car.photos.attached? %>
-        <% @car.photos.each do |photo|%>
-          <%= cl_image_tag photo.key, height: 800, width: 500, crop: :fit %>
-        <% end %>
-      <% end %>
-      <ul>
-        <li><%= @car.model %></li>
-        <li><%= @car.price %></li>
-        <li><%= @car.city %></li>
-        <li><%= @car.year %></li>
-      </ul>
+    <div class="col-6">
+      <div class="card-trip" style="height: 40em;">
+          <%= cl_image_tag @car.photos.first.key, style: "height: 500px;"%>
+        <div class="card-trip-infos">
+          <div class="">
+            <h2 class="card-title fs-2"><%= @car.model %></h2>
+            <p class="card-text">Address: <%= @car.city %><br>Year: <%= @car.year %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= @car.price%>$</h2>
+          </div>
+          <div class="row">
+          <div class="col-1 m-1 p-">
+            <p><i class="fa-solid fa-gas-pump fa-beat" style="color: #000000;"> Full</i></p>
+          </div>
+          <div class="col-2 m-1 ">
+            <p><i class="fa-solid fa-shield-halved fa-beat" style="color: #0d0d0d;"> Protection</i></p>
+          </div>
+          <div class="col-1 m-1">
+            <p><i class="fa-solid fa-handshake fa-beat" style="color: #070808;"> Friendly</i></p>
+          </div>
+          </div>
       </div>
     </div>
-    <div id="car" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-50" src="..." alt="First slide">
-        </div>
-        <div class="carousel-item">
-        <img class="d-block w-50" src="..." alt="Second slide">
-        </div>
-        <div class="carousel-item">
-      <img class="d-block w-50" src="..." alt="Third slide">
-    </div> %>
-  </div>
-</div>
-    </div>
-    <div class="col-7">
-      <%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f| %>
-        <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
-        <%= f.submit 'Schedule your appointment' %>
-      <% end %>
-
-        </div>
-
+    <div class="col-6">
       <div class="">
-
-        <h3>Contact Us</h3>
-        <div class="container-form">
-          <form name="contact_form">
-            <input type="text" name="name" placeholder="Your name" title="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email Address" title="Your Email Address" required><br>
-            <input type="tel" name="number" placeholder="Your Number" title="Your Number" maxlength="10" required><br>
-            <textarea name="message" placeholder="Your Message" title="Your Message" style="max-width: 250px; max-height: 200px; height: 100px; min-width: 250px;" required></textarea><br><br>
-            <input type="submit" id="btn-submit" name="submit" value="Send Message"><br>
-            <input type="reset" id="btn-reset" name="reset" value="Clear All">
-          </form>
-        </div>
-        </div>
+        <%= simple_form_for [@car, @booking], data: { controller: 'flatpickr' } do |f| %>
+          <div style="width: 300px;">
+          <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+          </div>
+          <div style="width: 300px;">
+          <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+          </div>
+          <%= f.submit 'Book Car' %>
+        <% end %>
+      </div>
     </div>
-
   </div>
-</div>
-<div >
-
- <p> you create the following book</p>
-
- <p>
-  <%= @booking.status %>
-  <%= @booking.start_date %>
-  <%= @booking.end_date %>
-  <%= @booking.car %>
-</p>
-
-</div
+</div >

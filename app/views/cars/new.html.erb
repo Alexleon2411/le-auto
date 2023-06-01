@@ -2,7 +2,7 @@
  <%= render "shared/navbar" %>
  <div class="banner">
  </div>
-  <div class="container p-2 card-border " style="height: auto; background-image: url('https://t3.ftcdn.net/jpg/02/90/72/26/360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg'); background-repeat: no-repeat; background-size: cover; color: #6CF0DE;">
+  <div class="container p-2 card-border " style="height: auto; background-image: url('https://t3.ftcdn.net/jpg/02/90/72/26/360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg'); background-repeat: no-repeat; background-size: cover; color: white;">
     <div class="row">
       <div class="col-8 ">
         <h1>Please introduce the details of  your car</h1>
@@ -12,13 +12,12 @@
               <%= f.input :year %>
               <%= f.input :city %>
               <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-              <%= f.button :submit, class: "btn btn-dark p-0" %>
+              <%= f.submit 'List car', class: "btn btn-light card-border" %>
             <% end %>
-
       </div>
       <div class="col-4">
         <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685452801/development/young-woman-with-microphone-working-on-record-studio-scaled-e1632251040963_zlbwr2.jpg', crop: :fill, class: "image-size")  %>
-        <h3 class="fs-5 ">if you have a question please <%= link_to "contact us", cars_path, class: "text-decoration-none"%> </h3>
+        <h3 class="fs-5 ">if you have a question please  </h3>
       </div>
     </div>
   </div>
@@ -40,7 +39,7 @@
          </p>
       </div>
       <div class="d-flex text-align-center justify-content-center me-5 container">
-        <%= link_to "Book your car", cars_path, class: "text-decoration-none btn btn-dark card-border " %>
+        <%= link_to "contact us", cars_path, class: "text-decoration-none btn btn-dark card-border " %>
       </div>
     </div>
   </div>
