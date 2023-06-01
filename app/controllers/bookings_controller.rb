@@ -4,12 +4,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.car = Car.find(params[:car_id])
     if @booking.save
-      redirect_to index_path
+      redirect_to car_booking_path(@booking.car, @booking)
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
