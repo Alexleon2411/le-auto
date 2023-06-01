@@ -1,0 +1,36 @@
+<%= render "shared/navbar" %>
+<div class="d-flex justify-content-center align-items-end">
+ <h1>Dashboard</h1>
+</div>
+<h2>Your Cars</h2>
+<ul>
+  <% current_user.cars.each do |car|%>
+    <% if car.photos.attached? %>
+        <% car.photos.each do |photo|%>
+          <%= cl_image_tag photo.key, height: 500, width: 200, crop: :fit %>
+        <% end %>
+    <% end %>
+    <%= car.model %>
+    <%= car.year %>
+    <%= car.price %>
+    <%= link_to "Remove", car_path(car),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
+     %>
+    <%= link_to "Edit your car info ",edit_car_path(car),class: "btn btn-outline-primary text-decoration-none p-1 m-2 card-border"%>
+  <% end %>
+</ul>
+
+<h2>Your Bookings</h2>
+<ul>
+  <% current_user.bookings.each do |booking|%>
+    <%= booking.status %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <%= link_to "Remove", car_booking_path(car),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
+     %>
+    <%= link_to "Edit your booking info ",edit_car_booking_path(car),class: "btn btn-outline-primary text-decoration-none p-1 m-2 card-border"%>
+  <% end %>
+</ul>
