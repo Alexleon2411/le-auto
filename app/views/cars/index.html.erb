@@ -14,10 +14,10 @@
 </div>
 
 <div class="container mt-2 bg">
-  <div class = "d-flex flex-wrap justify-content-start">
+  <div class = "d-flex flex-wrap justify-content-center">
       <% @cars.each do |car| %>
           <div class="m-2 " style="width: 300px;">
-            <div class="card-trip">
+            <div class="card-trip ">
               <% if car.photos.attached? %>
                 <%= cl_image_tag car.photos.first.key, class: "img-height" %>
               <% else %>
