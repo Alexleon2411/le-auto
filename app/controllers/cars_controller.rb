@@ -2,13 +2,13 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy, :update, :edit]
 
   def index
-    @cars = Car.all
+    @cars = Car.all.sort.reverse
 
     if params[:query].present?
       @query = params[:query]
       @cars = Car.where("model ILIKE ?", "%#{params[:query]}%")
     else
-      @cars = Car.all
+      @cars = Car.all.sort.reverse
     end
   end
 

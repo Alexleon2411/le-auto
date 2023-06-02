@@ -29,7 +29,7 @@
                   <p class="card-text">Address: <%= car.city %><br>Year: <%= car.year %>
                   </p>
                 </div>
-                <h2 class="card-trip-pricing"><%= car.price%>$</h2>
+                <h2 class="card-trip-pricing"><%= car.price%>€/Hour</h2>
                 <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered" %>
               </div>
               <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
