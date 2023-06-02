@@ -18,20 +18,11 @@
       <% @cars.each do |car| %>
           <div class="m-2 " style="width: 300px;">
             <div class="card-trip">
-
-              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-
-                    <% if car.photos.attached? %>
-                        <%= cl_image_tag car.photos.first.key, class: "card-img-top" %>
-                    <% else %>
-                      <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top" alt="car" >
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-
+              <% if car.photos.attached? %>
+                <%= cl_image_tag car.photos.first.key, class: "img-height" %>
+              <% else %>
+                <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="img-height" alt="car" >
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2 class="card-title"><%= car.model %></h2>
@@ -39,16 +30,17 @@
                   </p>
                 </div>
                 <h2 class="card-trip-pricing"><%= car.price%>$</h2>
-                <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+                <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered" %>
               </div>
-              <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark ms-2 p-1 card-border"%>
-              <%= link_to "Delete",
-              car_path(car),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
-              %>
-
+              <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
             </div>
           </div>
       <% end %>
   </div>
 </div>
+
+
+<%# link_to "Delete",
+car_path(car),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
+%>
