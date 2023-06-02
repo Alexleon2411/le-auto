@@ -13,7 +13,7 @@
     <%= car.model %>
     <%= car.year %>
     <%= car.price %>
-    <%= link_to "Remove", car_path(car),
+    <%= link_to "Delete", car_path(car),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
           class: "btn btn-outline-warning text-decoration-none p-1 m-2 card-border"
      %>
