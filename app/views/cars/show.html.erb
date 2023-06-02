@@ -2,8 +2,8 @@
 <div class="container" style="height: 100vh;">
   <div class="row">
     <div class="col-6">
-      <div class="card-trip" style="height: 40em;">
-          <%= cl_image_tag @car.photos.first.key, style: "height: 500px;"%>
+      <div class="card-trip " style="height: 40em; border-radius: 10px 10px 50px 0px ;">
+          <%= cl_image_tag @car.photos.first.key, class: "",  style: "height: 500px;"%>
         <div class="card-trip-infos">
           <div class="">
             <h2 class="card-title fs-2"><%= @car.model %></h2>
@@ -36,9 +36,9 @@
           <%= f.submit 'Book Car', class: "card-border" %>
         <% end %>
       </div>
-      <div class="card-trip m-3 p-3 card-border" style="width: 400px;">
+      <div class="card-trip m-3 p-4 card-border" style="width: 400px;">
         <h2 class="fs-3"> Owner contact</h2>
-        <p class="fs-4"> You can contact the owner anytime by the following information  and they will be there for your.<br>
+        <p class="fs-6"> You can contact the owner anytime by the following information  and they will be there for your.<br>
           Phonen number: <%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %>
         </p>
 

@@ -1,46 +1,65 @@
-<div class="" style="height: 100vh;">
+<div class=""style="">
  <%= render "shared/navbar" %>
- <div class="banner">
- </div>
-  <div class="container p-2 card-border " style="height: auto; background-image: url('https://t3.ftcdn.net/jpg/02/90/72/26/360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg'); background-repeat: no-repeat; background-size: cover; color: white;">
-    <div class="row">
-      <div class="col-8 ">
-        <h1>Please introduce the details of  your car</h1>
-            <%= simple_form_for (@car) do |f| %>
-              <%= f.input :model %>
-              <%= f.input :price %>
-              <%= f.input :year %>
-              <%= f.input :city %>
-              <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-              <%= f.submit 'List car', class: "btn btn-light card-border" %>
-            <% end %>
-      </div>
-      <div class="col-4">
-        <%= image_tag('https://res.cloudinary.com/dyl8jagdn/image/upload/v1685452801/development/young-woman-with-microphone-working-on-record-studio-scaled-e1632251040963_zlbwr2.jpg', crop: :fill, class: "image-size")  %>
-        <h3 class="fs-5 ">if you have a question please  </h3>
+ <div class="banner"></div>
+
+  <div class="container card-border p-2 my-2"
+    <div class=" justify-content-center " style="width: 700px; height: auto; background-repeat: no-repeat; background-size: cover; color: black;">
+      <div class="row">
+        <div class="col-12 ">
+          <h1>Please introduce the details of  your car</h1>
+              <%= simple_form_for (@car) do |f| %>
+                <%= f.input :model %>
+                <%= f.input :price %>
+                <%= f.input :year %>
+                <%= f.input :city %>
+                <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                <%= f.submit 'List car', class: "btn btn-light card-border" %>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>
-<div style="heigh: 200px; background-color: transparent;">
-</div>
-
+ <div class="ms-5 me-0 text-align-center">
   <div class="row">
-
-    <div class="col-6 border flex-fill mt-5 border border-dark" style="width: 50vh; height: 50vh; background-color: #99A98F;">
-      <div class="d-flex text-align-center justify-content-center me-5 p-3">
-        <h2 class="text-white "> Security policy and objective</h2>
-      </div>
-      <div class="d-flex text-align-center justify-content-center me-5 container">
-        <p class="text-white fs-4"> Cultural Aware Content
-        Mix and match vehicles, people, surroundings and company branding.
-        Every vehicle you offer in spectacular surroundings and people of ethnicity
-        relevant to your audience, branded as you see fit. Make your advertising even more effective
-         than before without spending a fortune on expensive photo shoots.
-         </p>
-      </div>
-      <div class="d-flex text-align-center justify-content-center me-5 container">
-        <%= link_to "contact us", cars_path, class: "text-decoration-none btn btn-dark card-border " %>
+    <div class="col-4 d-flex flex-column align-items-center">
+      <div class=" border flex-fill border border-dark my-2 me-0 card-border" style="width: 300px; height: 300px; background-color: #F2E3DB;">
+        <div class="d-flex text-align-center justify-content-center me-5 p-3">
+          <h3 class="text-dark text-wrap"> Security policy and objective</h2>
+        </div>
+        <div class="d-flex text-align-center justify-content-center me-5 container p-2">
+          <p class="text-dark  text-wrap"> Cultural Aware Content
+          Mix and match vehicles, people, surroundings and company branding.
+          Every vehicle you offer in spectacular surroundings and people of ethnicity
+          relevant to your audience, branded as you see fit
+        </div>
       </div>
     </div>
+    <div class="col-4 d-flex flex-column align-items-center">
+      <div class=" border flex-fill border border-dark my-2 me-0 card-border" style="width: 300px; height: 300px; background-color: #99A98F;">
+        <div class="d-flex text-align-center justify-content-center me-5 p-3">
+          <h3 class="text-white text-wrap"> Security policy and objective</h2>
+        </div>
+        <div class="d-flex text-align-center justify-content-center me-5 container p-2">
+          <p class="text-white text-wrap"> Cultural Aware Content
+          Mix and match vehicles, people, surroundings and company branding.
+          Every vehicle you offer in spectacular surroundings and people of ethnicity
+          relevant to your audience, branded as you see fit
+        </div>
+      </div>
+    </div>
+    <div class="col-4 d-flex flex-column align-items-center">
+      <div class=" border flex-fill border border-dark my-2 me-0 card-border" style="width: 300px; height: 300px; background-color: #F2E3DB;">
+        <div class="d-flex text-align-center justify-content-center me-5 p-3">
+          <h3 class="text-dark text-wrap"> Security policy and objective</h2>
+        </div>
+        <div class="d-flex text-align-center justify-content-center me-5 container p-2">
+          <p class="text-dark text-wrap"> Cultural Aware Content
+          Mix and match vehicles, people, surroundings and company branding.
+          Every vehicle you offer in spectacular surroundings and people of ethnicity
+          relevant to your audience, branded as you see fit
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
