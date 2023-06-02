@@ -4,8 +4,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+
   def show
     @booking = Booking.find(params[:id])
+    @car =  Car.find(params[:car_id])
+    @total = (@booking.end_date - @booking.start_date ).to_i * @car.price
   end
 
   def create

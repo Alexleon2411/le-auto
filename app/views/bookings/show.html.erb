@@ -1,10 +1,40 @@
-<h1>Your details of your request</h1>
-<%= @booking.user.first_name %>
-<%= @booking.user.last_name %>
-<% if @booking.car.photos.attached? %>
-  <% @booking.car.photos.each do |photo|%>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top " %>
-  <% end %>
-<% else %>
-  <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top " alt="car" >
-<% end %>
+<div class="booking-container">
+  <div class="booking-details">
+    <%= link_to car_path(@car), class: "arrow_back" do %>
+     <i class="fa-solid fa-arrow-left" ></i> <h1>Request Book</h1>
+    <% end %>
+      <ul>
+        <p>Start
+          <li><%= @booking.start_date.strftime("%b %d, %Y") %></li>
+        </p>
+        <p>End
+          <li><%=@booking.end_date.strftime("%b %d, %Y") %></li>
+        </p>
+    </div>
+
+
+  <div class="car_card">
+
+    <h4>Details price</h1>
+
+    <% if @booking.car.photos.attached? %>
+        <% @booking.car.photos.each do |photo|%>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top " %>
+    <% end %>
+    <% else %>
+    <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top " alt="car" >
+    <% end %>
+    <div class="infos">
+        <ul>
+        <h5>
+          Total :
+        <p><li><%= @booking.car.model%></li></p>
+        <p><li><%= (@booking.end_date - @booking.start_date ).to_i %> days x <%= @booking.car.price %> = <%= @total %>$</p></li>
+        <p><li><%= @booking.car.price%>$</li></p>
+        <p><li><%= @total %>$</li></p>
+
+        </h5>
+     </ul>
+    </div>
+  </div>
+</div>
