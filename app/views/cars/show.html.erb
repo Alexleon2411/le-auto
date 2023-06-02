@@ -1,23 +1,56 @@
 <%= render "shared/navbar" %>
-<div class="container" style="height: 100vh;">
+<div class="container" ">
   <div class="row">
-    <div class="col-6">
-      <div class="card-trip" style="height: 50em;">
-      <h2 class="card-title fs-2"><%= @car.model %></h2>
-      <p class="card-text fs-4">Address: <%= @car.city %><br>Year: <%= @car.year %></p>
-          <%= cl_image_tag @car.photos.first.key, style: "height: 500px;"%>
+    <div class="col-12">
+      <div class="card-trip " style="height: 40em; border-radius: 50px 50px 50px 50px ;">
+          <%= cl_image_tag @car.photos.first.key, class: "",  style: "height: 500px;"%>
         <div class="card-trip-infos">
-          <div class="">
-            <p><i class="fa-regular fa-gas-pump fa-beat" style="color: #070708;"></i></p>
-            <p>full tank of combustible</p>
+            <div class="">
+              <h2 class="card-title fs-2 font mx-2"><%= @car.model %></h2>
+              <p class="card-text  fs-4 mx-2">Address: <%= @car.city %><br>Year: <%= @car.year %></p>
+            </div>
+          <h2 class="card-trip-pricing fs-2  m-1"><%= @car.price%>$</h2>
           </div>
-          <h2 class="card-trip-pricing"><%= @car.price%>$</h2>
-          <%= cl_image_tag @car.user.photo.key, class: "card-trip-user avatar-bordered" %>
-        </div>
+
       </div>
     </div>
+
     <div class="col-6">
-      <div class="">
+      <h2 class="fs-3 border-bottom p-4"> Car details </h2>
+      <div class="row p-4">
+        <div class="col-6">
+            <div class=" p-4 card-border" style="">
+              <p class="fs-6 border-bottom"> <i class="fa-solid fa-user" style="color: #2a2b2d;"></i> 5 Seats
+              </p>
+              <p class="fs-6 border-bottom"> <i class="fa-solid fa-gauge-high" style="color: #161718;"></i>  unlimited mileage
+              </p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class=" p-4 card-border" style="">
+              <p class="fs-6 border-bottom"> <i class="fa-solid fa-location-pin" style="color: #161717;"></i> GPS available
+              </p>
+              <p class="fs-6 border-bottom"> <i class="fa-solid fa-suitcase" style="color: #18191b;"></i> 3 large bags
+              </p>
+            </div>
+        </div>
+      </div>
+      <div class="row p-4">
+          <div class="col-2">
+            <p><i class="fa-solid fa-gas-pump" style="color: #000000;">    Full</i></p>
+          </div>
+          <div class="col-3 ">
+            <p><i class="fa-solid fa-shield-halved" style="color: #0d0d0d;"> Protection</i></p>
+          </div>
+          <div class="col-2 ">
+            <p><i class="fa-solid fa-handshake" style="color: #070808;"> Friendly</i></p>
+          </div>
+          </div>
+    </div>
+
+    <div class="col-6 d-flex flex-column align-items-center">
+      <div class="card-trip m-3  p-3 card-border" style="width: 400px;">
         <%= simple_form_for [@car, @booking], data: { controller: 'flatpickr' } do |f| %>
           <div style="width: 300px;">
           <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
@@ -25,9 +58,18 @@
           <div style="width: 300px;">
           <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
           </div>
-          <%= f.submit 'Book Car' %>
+          <%= f.submit 'Book Car', class: "card-border" %>
         <% end %>
       </div>
+      <div class="col-6 d-flex flex-column align-items-center">
+        <div class="card-trip m-3 p-4 card-border" style="width: 400px;">
+          <h2 class="fs-3"> Owner contact</h2>
+          <p class="fs-6"> You can contact the owner anytime by the following information  and they will be there for your.<br>
+            Phonen number: <%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %><%= (1...10).to_a.sample %>
+          </p>
+        </div>
+      </div>
     </div>
+
   </div>
 </div >
