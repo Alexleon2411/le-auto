@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-lewagon bg ">
   <div class="container-fluid">
-    <%= link_to cars_path, class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag('https://png.pngtree.com/background/20230412/original/pngtree-car-light-effect-light-blue-picture-image_2397923.jpg' , class: "card-border btn2" )%>
     <% end %>
 
@@ -13,20 +13,23 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active d-flex align-items-center ">
-            <%= link_to "Home", root_path, class: "font border border-dark m-2 card-border btn btn-outline-dark" %>
+
+            <%= link_to "All Cars", cars_path, class: "font border border-dark m-2 card-border btn btn-outline-dark" %>
+
           </li>
           <li class="nav-item d-flex align-items-center">
             <%= link_to "Dashboard", "/dashboard", class: "font border border-dark m-2 card-border btn btn-outline-dark" %>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Create a car", new_car_path, class: "font border border-dark m-2 card-border btn btn-outline-dark" %>
+
+            <%= link_to "List a car", new_car_path, class: "font border border-dark m-2 card-border btn btn-outline-dark" %>
           </li>
           <li class="nav-item dropdown bg">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
           <% else %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <i class="fa-solid fa-user-astronaut fs-2 mt-2" style="color: #111212;"></i>
           <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end card-border" aria-labelledby="navbarDropdown">
