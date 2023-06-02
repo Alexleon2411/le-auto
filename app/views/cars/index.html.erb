@@ -13,10 +13,10 @@
 </div>
 
 <div class="container mt-2 bg">
-  <div class = "d-flex flex-wrap justify-content-start">
+  <div class = "d-flex flex-wrap justify-content-center">
       <% @cars.each do |car| %>
           <div class="m-2 " style="width: 300px;">
-            <div class="card-trip">
+            <div class="card-trip ">
               <% if car.photos.attached? %>
                 <%= cl_image_tag car.photos.first.key, class: "img-height" %>
               <% else %>
@@ -28,10 +28,10 @@
                   <p class="card-text">Address: <%= car.city %><br>Year: <%= car.year %>
                   </p>
                 </div>
-                <h2 class="card-trip-pricing"><%= car.price%>€/Hour</h2>
+                <h2 class="card-trip-pricing"><%= car.price%>€/Day</h2>
                 <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered" %>
               </div>
-              <%= link_to "Book Car",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
+              <%= link_to "View",car_path(car), class: "text-decoration-none btn btn-outline-dark m-2 p-1 card-border"%>
             </div>
           </div>
       <% end %>
