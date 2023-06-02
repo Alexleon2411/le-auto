@@ -1,40 +1,38 @@
-<div class="booking-container">
-  <div class="booking-details">
+<div class="container">
+  <div class="row">
     <%= link_to car_path(@car), class: "arrow_back" do %>
-     <i class="fa-solid fa-arrow-left" ></i> <h1>Request Book</h1>
+     <i class="fa-solid fa-arrow-left" ></i>
     <% end %>
-      <ul>
-        <p>Start
-          <li><%= @booking.start_date.strftime("%b %d, %Y") %></li>
-        </p>
-        <p>End
-          <li><%=@booking.end_date.strftime("%b %d, %Y") %></li>
-        </p>
-    </div>
+    <h1 class="font">Your Booking</h1>
+        <div class="col-6 ">
+          <div class="">
+             <p class=" border-top">Start date: <%= @booking.start_date.strftime("%b %d, %Y") %></p>
+             <p class="border-bottom">End date:<%=@booking.end_date.strftime("%b %d, %Y") %></p>
+          </div>
+        </div>
 
 
-  <div class="car_card">
 
-    <h4>Details price</h1>
+    <div class="col-6">
+      <h4 class="font">Details price</h1>
+      <div class="card-border">
+        <% if @booking.car.photos.attached? %>
+            <% @booking.car.photos.each do |photo|%>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top ", style: "border-radius: 30px 30px 0px 0px ; background-size: cover;"  %>
+        <% end %>
+        <% else %>
+        <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" alt="car" style="border-radius: 30px;" >
+        <% end %>
 
-    <% if @booking.car.photos.attached? %>
-        <% @booking.car.photos.each do |photo|%>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top " %>
-    <% end %>
-    <% else %>
-    <img src="https://wallpaperset.com/w/full/2/d/b/483054.jpg" class="card-img-top " alt="car" >
-    <% end %>
-    <div class="infos">
-        <ul>
-        <h5>
-          Total :
-        <p><li><%= @booking.car.model%></li></p>
-        <p><li><%= (@booking.end_date - @booking.start_date ).to_i %> days x <%= @booking.car.price %> = <%= @total %>$</p></li>
-        <p><li><%= @booking.car.price%>$</li></p>
-        <p><li><%= @total %>$</li></p>
-
-        </h5>
-     </ul>
+        <div class=" p-2" style="background-color: white; border-radius: 0px 0px 30px 30px ;">
+            <div class=>
+                <p>Model: <%= @booking.car.model%></p>
+                <p>Book: <%= (@booking.end_date - @booking.start_date ).to_i %> days x <%= @booking.car.price %> = <%= @total %>$</p>
+                <p><%= @booking.car.price%>€</p>
+                <p>Total : <%= @total %>€</p>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
