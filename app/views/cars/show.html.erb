@@ -10,12 +10,11 @@
               <p class="card-text  fs-4 mx-2">Address: <%= @car.city %><br>Year: <%= @car.year %></p>
             </div>
           <h2 class="card-trip-pricing fs-2  m-1"><%= @car.price%>€/Day</h2>
-          </div>
-
+        </div>
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-sm-12 col-lg-6">
       <h2 class="fs-3 border-bottom p-4"> Car details </h2>
       <div class="row p-4">
         <div class="col-6">
@@ -27,7 +26,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-sm-12 col-lg-6">
             <div class=" p-4 card-border" style="">
               <p class="fs-6 border-bottom"> <i class="fa-solid fa-location-pin" style="color: #161717;"></i> GPS available
               </p>
@@ -37,19 +36,19 @@
         </div>
       </div>
       <div class="row p-4">
-          <div class="col-2">
+          <div class="col-12 col-sm-12 col-lg-6 ">
             <p><i class="fa-solid fa-gas-pump" style="color: #000000;">    Full</i></p>
           </div>
-          <div class="col-3 ">
+          <div class="col-12 col-sm-12 col-lg-6 ">
             <p><i class="fa-solid fa-shield-halved" style="color: #0d0d0d;"> Protection</i></p>
           </div>
-          <div class="col-2 ">
+          <div class="col-12 col-sm-12 col-lg-6">
             <p><i class="fa-solid fa-handshake" style="color: #070808;"> Friendly</i></p>
           </div>
           </div>
     </div>
 
-    <div class="col-6 d-flex flex-column align-items-center">
+    <div class="col-12 col-sm-12 col-lg-6 d-flex flex-column align-items-end">
       <div class="card-trip m-3  p-3 card-border" style="width: 400px;">
         <%= simple_form_for [@car, @booking], data: { controller: 'flatpickr' } do |f| %>
           <div style="width: 300px;">
@@ -61,7 +60,7 @@
           <%= f.submit 'Book Car', class: "card-border" %>
         <% end %>
       </div>
-      <div class="col-6 d-flex flex-column align-items-center">
+      <div class="col-6 d-flex flex-column align-items-end">
         <div class="card-trip m-3 p-4 card-border" style="width: 400px;">
           <h2 class="fs-3"> Owner contact</h2>
           <p class="fs-6"> You can contact the owner anytime by the following information  and they will be there for your.<br>

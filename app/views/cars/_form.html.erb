@@ -1,9 +1,8 @@
 <%= simple_form_for (@car) do |f| %>
-  <div>
-  <%= f.input :model %>
-  <%= f.input :price %>
-  <%= f.input :year %>
-  <%= f.input :city %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-outline-dark p-0" %>
+    <%= f.input :model %>
+    <%= f.input :price %>
+    <%= f.input :year %>
+    <%= f.input :city %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class: "btn btn-outline-dark p-0" %>
   <% end %>
